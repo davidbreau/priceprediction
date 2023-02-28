@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Estimez votre bien{% endblock title %}
+{% block content %}
+<section>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button onclick="myalert()">
+            <input type="submit" value="Valider" />
+        </button>
+          
+         {% comment %} <script>
+            function myalert() {
+                alert("Votre bien est estimé à :"
+                {% price_prediction|floatform:0 %}
+                );
+            }
+            
+        </script> {% endcomment %}
+    </form>
+</section>
+{% endblock content %}

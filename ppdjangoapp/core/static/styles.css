@@ -1,0 +1,7 @@
+.errorlist li {
+    display: none;
+}
+.errorlist li.required {
+    display: block;
+}
+
