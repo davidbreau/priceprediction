@@ -1,22 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}Estimez votre bien{% endblock title %}
+{% block title %}King County Real Estate Estimator{% endblock title %}
 {% block content %}
+<header>
+</header>
 <section>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button onclick="myalert()">
-            <input type="submit" value="Valider" />
-        </button>
-          
-         {% comment %} <script>
-            function myalert() {
-                alert("Votre bien est estimé à :"
-                {% price_prediction|floatform:0 %}
-                );
-            }
-            
-        </script> {% endcomment %}
-    </form>
+    <div class="home-container">
+        <div class="homepicture">
+            <figure>
+                {% comment %} <img src='https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg' alt="Porte ouverte avec clé sur la serrure"> {% endcomment %}
+            </figure>
+        </div>
+        <div class="hometext" style="background-color:rgba(0, 0, 0, 0.5);border:thin solid white;">
+            <p style="text-align:center">Welcome !</p><br><br>
+            <p>Feel free to fill the form on the right to estimate the real estate price of your property in King County, Seattle, USA.<br><br>
+            This website will perfom advenced algorithms to predict the value of your property within the various factors  such as location, size, and features.<br><br>
+            The resource can be used for homeowners, homebuyers, and real estate professionals
+            </p>
+        </div>
+        <div class="homeform">
+            <div style="background-color:rgba(71, 49, 21, 0.8);border:thin solid white;">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Get estimation" />  
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock content %}

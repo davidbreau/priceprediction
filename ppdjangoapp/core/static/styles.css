@@ -1,7 +1,266 @@
+/*--------------- BODY ---------------*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #fff;
+}
+
+
+body > * {
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+/*--------------- Images ---------------*/
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.homepicture {
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    filter: none;
+}
+
+.gif {
+    height:400px;
+    cursor:progress;
+}
+
+/*--------------- NAVBAR ---------------*/
+
+nav {
+    color:rgb(114, 151, 160);
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+	text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+nav li {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+nav figure {
+    width: 120px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-right: 40px;
+}
+
+
+nav ul li a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgb(104, 89, 68);
+    transition: color 0.3s;
+}
+
+/*---------------ERROR LIST ---------------*/
+
 .errorlist li {
     display: none;
 }
 .errorlist li.required {
     display: block;
+}
+
+/*--------------- FORMULAIRE ---------------*/
+
+form {
+	margin: 0 auto;
+	width: 50%;
+    padding: 10px;
+    
+}
+
+form > * {
+    padding-bottom: 2px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight:normal;
+}
+
+input[type="text"], input[type="email"], textarea {
+	padding: 5px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+
+input[type="submit"], input[type=reset] {
+	/* padding: 5px 10px; */
+	color: #000;
+    padding: 5px;
+	border: 10px;
+	/* border-radius: 20px; */
+	cursor: pointer;
+    width: 90%;
+    border-radius:5px;
+}
+
+input[type="submit"]:hover {
+	background-color: #BBB;
+	color: #333;
+    border:#fff;
+    border-radius:20px;
+    cursor:zoom-in;
+}
+
+/*--------------- HOME GRID ---------------*/
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 90%;
+    grid-gap: 20px;
+    background-image: url("https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg");
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: end;
+    margin-left: 50px;
+    color: white;
+  }
+  
+  .homeform {
+    grid-column: 3 / 4;
+    grid-row: 1;
+    align-self: end;
+    margin-right: 50px;
+    color: white;
+    border: 10px;
+    border-top-left-radius: 20px;
+    border-color: #fff;
+    padding:40px;
+  }
+
+  .hometext {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+    margin-left: 200px;
+    margin-right: 500px;
+    font-size: 20px;
+    text-align: justify;
+    color: #fff;
+    padding:40px;
+    outline-width:2px;
+    outline-color:white;
+  }
+
+/*--------------- PRICE GRID ---------------*/
+
+.pricepage {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.price {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.price, span{
+    background-image: linear-gradient(
+     -225deg,
+     #1c0b57 0%,
+     #44107a 29%,
+     #580c25 67%,
+     #858110 100%
+   );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+ }
+ 
+ @keyframes textclip {
+   to {
+     background-position: 200% center;
+   }
+ }
+
+
+  
+.pricetext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40ch;
+    text-align: center;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+  @keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+  }
+  
+  span:nth-child(1) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(2) {
+    animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(3) {
+    animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(4) {
+    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  
+  @keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
 }
 

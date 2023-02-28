@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="{% static 'reset.css' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
+<nav>
+    <figure>
+    </figure>
+    <ul>
+             <li><a href="{% url 'index' %}">Home</a></li>
+    </ul>
+</nav>
 {% block content %}{% endblock content %}    
 </body>
 </html>

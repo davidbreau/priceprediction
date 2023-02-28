@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 {% block title %}votre bien estimé{% endblock title %}
 {% block content %}
-    {{ price_prediction|floatformat:0 }}
+<div class='pricepage'>
+    <script type="text/javascript">
+        var imageURLs = [
+        "https://i.pinimg.com/originals/86/27/8a/86278a85992a8b2dffdb38307459c5e7.gif",
+        "https://cdn.dribbble.com/users/127211/screenshots/1635050/house-animation-lag.gif",
+        "https://cdn.dribbble.com/users/2460221/screenshots/7944750/media/83c1a436e02b618e278f11749b5623b0.gif",
+        "https://cdn.dribbble.com/users/1601802/screenshots/6287669/dribbble.gif",
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ba467372969113.5bf9ecdda7cfb.gif",
+        ];
+        function getImageTag() {
+        var img = '<img class="gif" src=\"';
+        var randomIndex = Math.floor(Math.random() * imageURLs.length);
+        img += imageURLs[randomIndex];
+        img += '\" alt=\"Some alt text\"/>';
+        return img;
+        }
+    </script>
+    <section class='pricegif'>
+        <script type="text/javascript">
+            document.write(getImageTag());
+        </script>
+    </section>
+    <section>
+        <p class='pricetext'>
+        <h1>
+            <span>The</span>
+            <span>predicted</span>
+            <span>price</span>
+            <span>is</span>
+        </p>
+          </h1>
+        <p class='price'>{{ price_prediction|floatformat:0 }} $</p>
+    </section>
+</div>
 {% endblock content %}
