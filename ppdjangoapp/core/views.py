@@ -5,7 +5,7 @@ import pandas as pd
 import pickle
 from .forms import PriceForm
 
-with open('trained_pipe_lr.pkl', 'rb') as f:
+with open('trained_pipe.pkl', 'rb') as f:
     model = pickle.load(f)
 
 def index(request):
